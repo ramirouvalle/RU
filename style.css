@@ -1,3 +1,7 @@
+*{	
+	margin: 0; 
+	padding: 0;
+}
 html, body { 
 	height: 100%; 
 	margin: 0; 
@@ -11,6 +15,11 @@ header{
 	width: 100%;
 	height: 7%;
 	background-color: #27ae60;
+}
+header h1{
+	font-family: oswald;
+	color: white;
+	text-align: center;
 }
 section{
 	width: 100%;
@@ -32,6 +41,7 @@ section{
 #sidebar form{
 	padding: 1em 1.5em;
 	box-sizing: border-box;
+	height: 25%;
 }
 #sidebar p{
 	margin: 0;
@@ -46,4 +56,10 @@ section{
 	font-size: .9em;
 	box-sizing: border-box;
 }
-
+#panelRuta{
+	width: 100%;
+	height: 75%;
+	background-color: white;
+	padding: 0 0;
+	overflow: scroll;
+}

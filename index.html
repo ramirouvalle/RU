@@ -2,34 +2,84 @@
 <html>
   <head>
     <link href="style.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script async defer
+      src="https://maps.googleapis.com/maps/api/js?ey=AIzaSyAVTXAAvDwe8OaeC3xg2KVqgKYWhn7zv_E&callback=initMap">
+    </script>
     <script type="text/javascript">
+      var directionsDisplay;
+      var directionsService = new google.maps.DirectionsService();
       var map;
+
       function initMap() {
-        map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: 25.725223, lng: -100.313119},
-          zoom: 13
+        directionsDisplay = new google.maps.DirectionsRenderer();
+        var uanl = new google.maps.LatLng(25.7238862, -100.31285739999998);
+        var mapConfig = {
+          zoom: 13,
+          center: uanl
+        }
+        map = new google.maps.Map(document.getElementById('map'), mapConfig);
+        //directionsDisplay.setMap(map);
+        //directionsDisplay.setPanel(document.getElementById("panelRuta"));
+        directionsDisplay = new google.maps.DirectionsRenderer();
+        directionsService = new google.maps.DirectionsService();
+
+      }
+
+      function ruta(){
+        var request = {
+            origin: document.getElementById("inicio").value,
+            //destination: document.getElementById("fin").value,
+            destination: new google.maps.LatLng(25.7238862, -100.31285739999998),
+            travelMode: google.maps.TravelMode.DRIVING,
+            unitSystem: google.maps.UnitSystem.METRIC,
+            provideRouteAlternatives: true
+        };
+        directionsService.route(request, function(response, status) {
+            if (status == google.maps.DirectionsStatus.OK) {
+                directionsDisplay.setMap(map);
+                directionsDisplay.setPanel($("#panel_ruta").get(0));
+                directionsDisplay.setDirections(response);
+            } else {
+                    alert("No existen rutas entre ambos puntos");
+            }
+          if (status == google.maps.DirectionsStatus.OK) {
+            directionsDisplay.setMap(map);
+            directionsDisplay.setPanel(document.getElementById("panelRuta"));
+            directionsDisplay.setDirections(response);
+          }else{
+            alert("No exiten");
+          }
         });
       }
-    </script>
-    <script async defer
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAVTXAAvDwe8OaeC3xg2KVqgKYWhn7zv_E&callback=initMap">
+
+      $('#buscar').live('click', function(){
+          ruta();
+      });
+ 
     </script>
   </head>
   <body>
     <header>
+      <h1>RideUniversitario</h1>
     </header>
     <section>
       <div id="sidebar">
         <form>
-          <p>Punto de partida</p>
-          <input type="text" name="inicio" placeholder="Casa">
+          <p>Origen</p>
+          <input type="text" id="inicio" placeholder="Casa" />
+          <!--
           <p>Destino</p>
-          <input type="text" name="fin" placeholder="Facultad">
-          <input type="submit" value="Buscar" class="b1">
+          <input type="text" id="fin" placeholder="Facultad" />
+          -->
+          <input type="button" id="buscar" onclick="ruta()" value="Buscar" />
         </form>
+        <div id="panelRuta">
+        </div>
       </div>
       <div id="map">
       </div>
+      
     </section>
   </body>
 </html>
