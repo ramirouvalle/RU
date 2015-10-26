@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <link href="style.css" rel="stylesheet" type="text/css">
+    <!--
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script async defer
       src="https://maps.googleapis.com/maps/api/js?ey=AIzaSyAVTXAAvDwe8OaeC3xg2KVqgKYWhn7zv_E&callback=initMap">
@@ -58,36 +60,57 @@
       });
  
     </script>
+  -->
   </head>
   <body>
     <header>
       <h1>RideUniversitario</h1>
     </header>
     <section>
-      <div id="sidebar">
-        
-        <form>
-          <p>Origen</p>
-          <input type="text" id="inicio" placeholder="Casa" />
-          <!--
-          <p>Destino</p>
-          <input type="text" id="fin" placeholder="Facultad" />
-          -->
-          <input type="button" id="buscar" onclick="ruta()" value="Buscar" />
-        </form>
-        <div id="panelRuta">
+        <div id="sidebar">
+
+            <div id="menu-sidebar">
+                <ul>
+                    <li><a href="#" >Dar Ride</a></li>
+                    <li><a href="#" >Buscar Ride</a></li>
+                </ul>
+            </div>
+
+            <form>
+                <p>Origen</p>
+                <input type="text" id="inicio" placeholder="Origen" />
+                <input type="button" id="buscar" onclick="ruta()" value="Buscar" />
+            </form>
+            <!-- 
+            Donde se muestra las indicaciones de la ruta (No es necesario)
+            <div id="panelRuta">
+            </div>
+            -->        
         </div>
-        <!--
-        <div id="barmenu">
-          <li>
-            <ul><a href="#" >Dar Ride</a></ul>
-            <UL><a href="#" >Buscar Ride</a></ul>
-          </li>
+        <div id="contenido">
+            <div id="map">
+            </div>
+            <div id="info">
+                <div id="titular">
+                    <h2>Ride desde guadalupe</h2>
+                    <h3>ramUva</h3>
+                </div>
+                <div id="extras">
+                    <h2>Descripción</h2>
+                    <div id="descripcion">
+                        <p>Esta sera la descripcion sobre el ride donde se podra agregar: 
+                        <br>Horarios
+                        <br>Los dias que se realiza
+                        <br>Para cuantas personas esta disponible, etc.
+                      </p>
+                   </div>
+                   <div id="opciones">
+                      <input type="submit" value="Solicitar ride">
+                   </div>
+                </div>
+              </div>
         </div>
-      -->
-      </div>
-      <div id="map">
-      </div>
     </section>
+
   </body>
 </html>

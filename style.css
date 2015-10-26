@@ -1,16 +1,22 @@
 *{	
 	margin: 0; 
 	padding: 0;
+	box-sizing: border-box;
 }
 html, body { 
 	height: 100%; 
 	margin: 0; 
 	padding: 0; 
 	font-family: oswald;
+	background-color: #bdc3c7;
 }
 @font-face {
     font-family: oswald;
-    src: url(Oswald-Light.ttf);
+    src: url(fonts/Oswald-Light.ttf);
+}
+@font-face {
+    font-family: ubuntu;
+    src: url(fonts/Ubuntu-L.ttf);
 }
 header{
 	width: 100%;
@@ -26,22 +32,16 @@ section{
 	width: 100%;
 	height: 93%;
 }
-#map { 
-	width: 75%; 
-	height: 100%; 
-	float: right;
-}
+
 #sidebar{ 
-	width: 25%;
+	width: 22.5%;
 	height: 100%; 
 	float: left; 
-	background-color: #2ecc71;
+	background-color: #ecf0f1;
 	border-right: 1px #27ae60 solid;
-	box-sizing: border-box;
 }
 #sidebar form{
 	padding: 1em 1.5em;
-	box-sizing: border-box;
 	height: 25%;
 }
 #sidebar p{
@@ -64,29 +64,89 @@ section{
 	padding: 0 0;
 	overflow: scroll;
 }
-/*
-#barmenu{
+#menu-sidebar{
 	width: 100%;
 	height: 8%;
-	background-color: white;
-	box-sizing: border-box;
+	/*background-color: rgb(181,230,29);*/
+	background-color: #2ecc71;
 }
-#barmenu li{
-	width: 100%;
+#menu-sidebar ul{
 	height: 100%;
-	list-style: none;
+
 }
-#barmenu ul{
-	float: left;
+#menu-sidebar li{
+	padding-top: 3%;
 	width: 50%;
 	height: 100%;
+	float: left;
 	text-align: center;
+	list-style: none;
+	font-size: 1.2em;
 }
-#barmenu ul a{
+#menu-sidebar li a{
 	text-decoration: none;
-	font-size: 1.5em;
+	color: #FFF;
 }
-#barmenu ul a:hover{
-	background-color: #ccc;
+#menu-sidebar li a:hover{
+	color: yellow;
 }
-*/
+#contenido{
+	margin: 2.5% 2.5% 2% 2.5%;
+	width: 72.5%;
+	height: 89%;
+	float: right;
+	border: 1px #7f8c8d solid;
+}
+#map { 
+	width: 60%; 
+	height: 100%;
+	float: left; 
+	border-right: 1px #95a5a6 solid;
+	background-color: #456789;
+}
+#info{
+	padding: 10px;
+	width: 40%;
+	height: 100%;
+	background-color: #ecf0f1;
+	float: right;
+	color: #333;
+}
+#titular{
+	padding-bottom: 5px;
+	width: 100%;
+	border-bottom: 1px #333 solid;
+}
+#titular h3{
+	font-family: ubuntu;
+	font-size: .8em;
+}
+#extras{
+	margin-top: 10%;
+	width: 100%;
+	height: 70%;
+}
+#extras h2{
+	font-size: 1.3em;
+}
+#descripcion{
+	padding-top: 5px;
+	border-top: 1px #333 solid;
+}
+#descripcion p{
+	font-family: verdana;
+	font-size: .8em;
+}
+#opciones{
+	margin-top: 10px;
+	padding-top: 5px;
+	width: 100%;
+}
+#opciones input[type=submit]{
+	padding: 5px;
+	background-color: rgb(181,230,29);
+	border: 1px #AFB42B solid;
+	color: white;
+	font-family: ubuntu;
+	font-size: 1em;
+}
