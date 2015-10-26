@@ -1,85 +1,46 @@
-<!DOCTYPE html>
 <html>
   <head>
-    <link href="style.css" rel="stylesheet" type="text/css">
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-    <script async defer
-      src="https://maps.googleapis.com/maps/api/js?ey=AIzaSyAVTXAAvDwe8OaeC3xg2KVqgKYWhn7zv_E&callback=initMap">
-    </script>
-    <script type="text/javascript">
-      var directionsDisplay;
-      var directionsService = new google.maps.DirectionsService();
-      var map;
-
-      function initMap() {
-        directionsDisplay = new google.maps.DirectionsRenderer();
-        var uanl = new google.maps.LatLng(25.7238862, -100.31285739999998);
-        var mapConfig = {
-          zoom: 13,
-          center: uanl
-        }
-        map = new google.maps.Map(document.getElementById('map'), mapConfig);
-        //directionsDisplay.setMap(map);
-        //directionsDisplay.setPanel(document.getElementById("panelRuta"));
-        directionsDisplay = new google.maps.DirectionsRenderer();
-        directionsService = new google.maps.DirectionsService();
-
-      }
-
-      function ruta(){
-        var request = {
-            origin: document.getElementById("inicio").value,
-            //destination: document.getElementById("fin").value,
-            destination: new google.maps.LatLng(25.7238862, -100.31285739999998),
-            travelMode: google.maps.TravelMode.DRIVING,
-            unitSystem: google.maps.UnitSystem.METRIC,
-            provideRouteAlternatives: true
-        };
-        directionsService.route(request, function(response, status) {
-            if (status == google.maps.DirectionsStatus.OK) {
-                directionsDisplay.setMap(map);
-                directionsDisplay.setPanel($("#panel_ruta").get(0));
-                directionsDisplay.setDirections(response);
-            } else {
-                    alert("No existen rutas entre ambos puntos");
-            }
-          if (status == google.maps.DirectionsStatus.OK) {
-            directionsDisplay.setMap(map);
-            directionsDisplay.setPanel(document.getElementById("panelRuta"));
-            directionsDisplay.setDirections(response);
-          }else{
-            alert("No exiten");
-          }
-        });
-      }
-
-      $('#buscar').live('click', function(){
-          ruta();
-      });
- 
-    </script>
-  </head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link href="first.css" rel="stylesheet" type="text/css">
+  </head> 
   <body>
-    <header>
-      <h1>RideUniversitario</h1>
-    </header>
-    <section>
-      <div id="sidebar">
-        <form>
-          <p>Origen</p>
-          <input type="text" id="inicio" placeholder="Casa" />
-          <!--
-          <p>Destino</p>
-          <input type="text" id="fin" placeholder="Facultad" />
-          -->
-          <input type="button" id="buscar" onclick="ruta()" value="Buscar" />
-        </form>
-        <div id="panelRuta">
+    <nav>
+        <div id="logo">
+            <p>RideUniversitario</p>
         </div>
-      </div>
-      <div id="map">
-      </div>
-      
+        <ul id="menu">
+          <li><a href="#first">Iniciar sesión</a></li>
+          <li><a href="#first">Registrar</a></li>
+          <li><a href="#">Acerda de</a></li>
+        </ul>
+    </nav>  
+    <section id="home" data-type="parallax_section" data-speed="10">
+        <div id="home-cont">
+            <h1>Ride Universitario</h1>
+            <h2>Somos una comunidad que brinda a los alumnos de la universidad una plataforma para ofrecer y pedir un ride entre compañeros para ir a la universidad</h2>
+        </div>
+    </section>
+    <section id="first" data-type="parallax_section" data-speed="10">
+        <div id="cont">
+            <div id="login">
+                <form>
+                    <h3>Iniciar Sesión</h3>
+                    <input type="text" name="user" placeholder="Usuario">
+                    <input type="password" name="pass" placeholder="Contraseña">
+                    <input type="submit" value="Ingresar"> 
+                </form>
+            </div>
+            <div id="register">
+                <form>
+                    <h3>Registrarse</h3>
+                    <input type="text" name="matricula" placeholder="Matricula UANL">
+                    <input type="text" name="mail" placeholder="Correo">
+                    <input type="password" name="r-pass" placeholder="Contraseña">
+                    <input type="password" name="r-pass-conf" placeholder="Confirmar contraseña">
+                    <input type="submit" value="Registrar">
+                </form>
+            </div
+        </div>
     </section>
   </body>
 </html>

@@ -1,0 +1,173 @@
+*, html{
+	margin: 0;
+	padding: 0;
+	box-sizing:border-box;
+}
+@font-face {
+    font-family: oswald;
+    src: url(fonts/Oswald-Light.ttf);
+}
+@font-face {
+    font-family: ubuntu;
+    src: url(fonts/Ubuntu-L.ttf);
+}
+@font-face {
+    font-family: ubuntu-b;
+    src: url(fonts/Ubuntu-B.ttf);
+}
+@font-face {
+    font-family: ubuntu-m;
+    src: url(fonts/Ubuntu-M.ttf);
+}
+body{
+	background-color: #2ecc71;
+}
+nav{
+	width: 100%;
+	height: 9%;
+	background-color: #FFF;
+	position: fixed;
+}
+#logo{
+	margin-left: 5%;
+	padding: 10px;
+	height: 100%;
+	font-family: ubuntu-m;
+	font-size: 2em;
+	float: left;
+	color: #27ae60;
+}
+#menu{
+	height: 100%;
+	float: right;
+	font-family: oswald;
+	margin-right: 5%;
+}
+#menu li{
+	padding: 17px;
+	height: 100%;
+	list-style: none;
+	float: left;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	text-align: center;
+	color: #aaa;
+}
+#menu a{
+	text-decoration: none;
+	color:#aaa;
+}
+#menu a:hover{
+	color:#27ae60;
+}
+/*  seccion 1  */
+#home{
+	padding-top: 10%;
+	min-height: 650px;
+	width: 100%;
+	box-sizing:border-box;
+	background-image: url(images/bg3.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-attachment: fixed;
+}
+#home-cont{
+	margin: 10% auto 0 auto;
+	width: 70%;
+	height: 30%;
+}
+#home-cont h1{
+	font-size: 5em;
+	color: #FFF;	
+}
+#home-cont h2{
+	color: #FAFAFA;
+}
+#home-cont h1, h2{
+	font-family: oswald;
+	text-align: center;
+	text-shadow: 0px 0px 15px #000;
+}
+
+/*  Seccion 2  */
+#first{
+	padding: 8% 0 6% 0;
+	width: 100%;
+	height: 92%;
+	background-color: #2ecc71;
+}
+
+#cont{
+	margin: 0 auto;
+	width: 70%;
+	height: 100%;
+}
+
+/*  Login  */
+#login{
+	width: 45%;
+	height: 100%;
+	background-color: white;
+	/* #34495e;*/
+	float: left;
+	padding: 0;
+	border-radius: 3px;
+}
+#login form, #register form{
+	padding-top: 15%;
+	width: 100%;
+	height: 100%;
+}
+#login form h3, #register form h3{
+	font-family: ubuntu-b;
+	font-size: 2em;
+	text-transform: uppercase;
+	margin-bottom: 10%;
+	color: dimgrey;
+}
+#login input, #register input{
+	border: 1px #A9A9A9 solid;
+	border-radius: 3px;
+}
+#login input[type=text], input[type=password], #register input[type=text], input[type=password]{
+	margin-bottom: 10px;
+	padding-left: 3px;
+	width: 75%;
+	height: 12%;
+	font-size: 1em;
+	color: Gray;
+}
+#login input[type=submit], #register input[type=submit]{
+	margin-top: 20px;
+	width: 75%;
+	height: 12%;
+}
+
+/*  Registrar  */
+#register{
+	width: 45%;
+	height: 100%;
+	background-color: #34495e;
+	float:right;
+}
+#register form{
+	padding-top: 8%; 
+	text-align: center;
+}
+#register form h3{
+	color: white;
+	margin-bottom: 5%;
+}
+#register input[type=submit]{
+	margin-top: 10px;
+}
+
+#login, #register h3{
+	text-align: center;
+	padding: 5px;
+}
