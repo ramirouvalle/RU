@@ -1,3 +1,10 @@
+<?php
+    session_start();
+    if(!isset($_SESSION['sesionini'])){
+        header("Location: index.html");
+        exit();
+    }
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -64,7 +71,7 @@
   </head>
   <body>
     <header>
-      <h1>RideUniversitario</h1>
+      <h1>RideUniversitario</h1> <a href="logout.php">Cerrar sesión</a>
     </header>
     <section>
         <div id="sidebar">
