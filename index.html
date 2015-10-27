@@ -31,14 +31,20 @@
                 </form>
             </div>
             <div id="register">
-                <form>
+                <form action="" method="POST">
                     <h3>Registrarse</h3>
                     <input type="text" name="matricula" placeholder="Matricula UANL">
+                    <input type="text" name="usuario" placeholder="Usuario">
                     <input type="text" name="mail" placeholder="Correo">
                     <input type="password" name="r-pass" placeholder="Contraseña">
-                    <input type="password" name="r-pass-conf" placeholder="Confirmar contraseña">
-                    <input type="submit" value="Registrar">
+                    <input type="submit" name="registrar" value="Registrar">
+                    <?php
+                    if(isset($_POST['registrar'])){
+                        require("registro.php");
+                    }
+                    ?>
                 </form>
+
             </div
         </div>
     </section>
