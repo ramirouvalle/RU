@@ -5,19 +5,19 @@
 }
 @font-face {
     font-family: oswald;
-    src: url(fonts/Oswald-Light.ttf);
+    src: url(../fonts/Oswald-Light.ttf);
 }
 @font-face {
     font-family: ubuntu;
-    src: url(fonts/Ubuntu-L.ttf);
+    src: url(../fonts/Ubuntu-L.ttf);
 }
 @font-face {
     font-family: ubuntu-b;
-    src: url(fonts/Ubuntu-B.ttf);
+    src: url(../fonts/Ubuntu-B.ttf);
 }
 @font-face {
     font-family: ubuntu-m;
-    src: url(fonts/Ubuntu-M.ttf);
+    src: url(../fonts/Ubuntu-M.ttf);
 }
 body{
 	background-color: #2ecc71;
@@ -68,7 +68,7 @@ nav{
 	min-height: 650px;
 	width: 100%;
 	box-sizing:border-box;
-	background-image: url(images/bg3.jpg);
+	background-image: url(../images/bg3.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 	-webkit-background-size: cover;

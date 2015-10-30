@@ -1,7 +1,7 @@
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <link href="first.css" rel="stylesheet" type="text/css">
+    <link href="css/first.css" rel="stylesheet" type="text/css">
   </head> 
   <body>
     <nav>
@@ -23,34 +23,24 @@
     <section id="first" data-type="parallax_section" data-speed="10">
         <div id="cont">
             <div id="login">
-                <form method="POST">
+                <form method="POST" action="login.php">
                     <h3>Iniciar Sesión</h3>
                     <input type="text" name="user" placeholder="Usuario">
                     <input type="password" name="pass" placeholder="Contraseña">
                     <input type="submit" name="login" value="Ingresar"> 
-                    <?php
-                    if(isset($_POST['login'])){
-                        require("login.php");
-                    }
-                    ?>
                 </form>
             </div>
             <div id="register">
-                <form method="POST">
+                <form method="POST" action="registro.php" >
                     <h3>Registrarse</h3>
                     <input type="text" name="matricula" placeholder="Matricula UANL">
                     <input type="text" name="usuario" placeholder="Usuario">
                     <input type="text" name="mail" placeholder="Correo">
                     <input type="password" name="r-pass" placeholder="Contraseña">
                     <input type="submit" name="registrar" value="Registrar">
-                    <?php
-                    if(isset($_POST['registrar'])){
-                        require("registro.php");
-                    }
-                    ?>
                 </form>
 
-            </div
+            </div>
         </div>
     </section>
   </body>

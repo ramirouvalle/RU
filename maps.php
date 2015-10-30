@@ -66,7 +66,7 @@
           document.getElementById("info").style.display = "block";
           initMap();
       }
-          ///////////////////////////////////////////////////////////////////
+      ///////////////////////////////////////////////////////////////////
       function muestraListaRutas(){
           document.getElementById("pnl_buscar_rutas").style.display = "block";
           document.getElementById("pnl_crear_ruta").style.display = "none";
@@ -104,11 +104,9 @@
                 </form>
             </div>
             <div id="pnl_buscar_rutas">
-                <div id="lista_rutas">
                     <?php
                         require("verRutas.php");
                     ?>
-                </div>
             </div>
               <!-- 
               Donde se muestra las indicaciones de la ruta (No es necesario)

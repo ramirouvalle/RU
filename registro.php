@@ -8,14 +8,10 @@
 
 	if($verificacion > 0){
 		include("conexion.php");
-		mysql_query("INSERT INTO usuarios (user, pass, matricula, correo) VALUES ('$usuario', '$pass', '$matricula', '$mail')", $conexion);
+		mysql_query("INSERT INTO usuarios (user, pass, matricula, correo) VALUES ('$usuario', '$pass', '$matricula', '$mail')", $conexion) or die("Problema en la consultax: ".mysql_error());
 		mysql_close($conexion);
-		echo "Usuario Registrado";
-		//header("Location: maps.html");
+		header("Location: index.html#first");
 	}else{
 		echo "Complete todo el formulario";
 	}
-
-
-
 ?>
