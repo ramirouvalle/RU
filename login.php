@@ -1,4 +1,6 @@
 <?php
+	//session_start();
+	
 	$l_user = $_POST['user'];
 	$l_pass = $_POST['pass'];
 	

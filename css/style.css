@@ -212,11 +212,11 @@ section{
 #extras h2{
 	font-size: 1.3em;
 }
-#descripcion{
+.tip_info{
 	padding-top: 5px;
 	border-top: 1px #333 solid;
 }
-#descripcion p{
+.tip_info p{
 	font-family: verdana;
 	font-size: .8em;
 }
@@ -225,11 +225,47 @@ section{
 	padding-top: 5px;
 	width: 100%;
 }
-#opciones input[type=submit]{
+#opciones input[type=submit], #creacion input[type=submit]{
+	margin-top: 10px;
 	padding: 5px;
 	background-color: rgb(181,230,29);
 	border: 1px #AFB42B solid;
 	color: white;
 	font-family: ubuntu;
 	font-size: 1em;
+}
+#creacion{
+	padding: 3%;
+	width: 40%;
+	height: 100%;
+	float: right;
+	background-color: white;
+	display: none;
+	font-size: 1em;
+	font-family: opensans-l;
+}
+
+#creacion h1{
+	text-align: center;
+}
+#creacion h2{
+	margin-top: 15px;
+	color: brown;
+	font-size: 1em;
+}
+#creacion form{
+	width: 100%;
+}
+#creacion input{
+	border: 1px #A9A9A9 solid;
+	border-radius: 3px;
+}
+#creacion input[type=text]{
+	margin-top: 8px;
+	padding: 5px;
+	width: 100%;
+	font-size: .9em;
+}
+#creacion input[type=checkbox]{
+	margin: 10px 3px 0 0;
 }
