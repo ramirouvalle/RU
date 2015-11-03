@@ -10,8 +10,9 @@
 		echo "<h1>".$reg['nom_ruta']."</h1>";
 		echo "</a>";
 		echo "<p>".$reg['anfitrion']."</p>";
-		echo "<p>".$reg['origen_x']."</p>";
-		echo "<p>".$reg['origen_y']."</p>";
+		echo "<p>".$reg['ubicacion']."</p>";
+		echo "<p>".$reg['horario']."</p>";
+		echo "<p>".$reg['dias']."</p>";
 		//echo "<p>".$reg['id_ruta']."</p>";
 		echo "</div>";
 	}

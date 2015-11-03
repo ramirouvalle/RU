@@ -63,9 +63,14 @@
           ruta();
       });
 
-      function prevRuta(){
+      function prevRuta(ubicacion){
         initMap();
-        var valor = document.getElementById("ubi").value;
+        var valor
+        if(ubicacion == ""){
+          valor = document.getElementById("ubi").value;
+        }else{
+          valor = ubicacion;
+        }
         if(valor != ""){
          document.getElementById("map").style.display = "block";
           initMap();
@@ -132,7 +137,8 @@
           var contenedor = document.getElementsByClassName("elementos");
           var titulo = contenedor[cont].getElementsByTagName("h1");
           var p = contenedor[cont].getElementsByTagName("p");
-
+          var ubicacion = p[1].innerHTML;
+          prevRuta(ubicacion);
           document.getElementById("info_titulo").innerHTML = titulo[0].innerHTML;
           document.getElementById("info_user").innerHTML = p[0].innerHTML;
           document.getElementById("creacion").style.display = "none";
@@ -215,21 +221,21 @@
                   <h1>Crear nueva ruta</h1>
                   <form method="POST" action="guardar_ruta.php">
                       <input type="text" id="ubi" name="ubicacion" placeholder="Ubicacion">
-                      <a href="#" onclick="prevRuta()">Visualizar Ruta</a>
+                      <a href="#" onclick="var v = document.getElementById('ubi').value; prevRuta(v);">Visualizar Ruta</a>
                       <input type="text" name="titulo" placeholder="Nombre de la ruta">
-                      <input type="text" name="horario" placeholder="Horario">
+                      <input type="text" name="horario" placeholder="Horario de salida">
                       <h2>Dias que realiza la ruta</h2>
                       <table>
                           <tr>
-                              <td><input type="checkbox" name="dias" value="Lunes">Lunes <br></td>
-                              <td><input type="checkbox" name="dias" value="Martes">Martes <br></td>
-                              <td><input type="checkbox" name="dias" value="Miercoles">Miercoles <br></td>
-                              <td><input type="checkbox" name="dias" value="Jueves">Jueves <br></td>
+                              <td><input type="checkbox" name="dias[]" value="Lunes">Lunes <br></td>
+                              <td><input type="checkbox" name="dias[]" value="Martes">Martes <br></td>
+                              <td><input type="checkbox" name="dias[]" value="Miercoles">Miercoles <br></td>
+                              <td><input type="checkbox" name="dias[]" value="Jueves">Jueves <br></td>
                           </tr>
                           <tr>
-                              <td><input type="checkbox" name="dias" value="Viernes">Viernes <br></td>
-                              <td><input type="checkbox" name="dias" value="Sabado">Sabado <br></td>
-                              <td><input type="checkbox" name="dias" value="Domingo">Domingo</td>
+                              <td><input type="checkbox" name="dias[]" value="Viernes">Viernes <br></td>
+                              <td><input type="checkbox" name="dias[]" value="Sabado">Sabado <br></td>
+                              <td><input type="checkbox" name="dias[]" value="Domingo">Domingo</td>
                           </tr>
                       </table>
                       <input type="submit" name="btnCrearRuta" value="Guardar RUTA">    
