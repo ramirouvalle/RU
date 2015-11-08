@@ -30,7 +30,7 @@
           map = new google.maps.Map(document.getElementById('mapa'), mapConfig);
           directionsDisplay = new google.maps.DirectionsRenderer();
           directionsService = new google.maps.DirectionsService();
-
+          //UBICACION
           if (navigator.geolocation) {
 		    navigator.geolocation.getCurrentPosition(function(position) {
 			    lat = position.coords.latitude;

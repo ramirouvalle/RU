@@ -8,7 +8,7 @@
 		echo "<a href='#' onclick='verRuta($cont);'>";
 		echo "<h1>".$reg['nom_ruta']."</h1>";
 		echo "</a>";
-		//echo "<p>".$reg['anfitrion']."</p>";
+		echo "<p>".$reg['anfitrion']."</p>";
 		echo "<p>".$reg['ubicacion']."</p>";
 
 		/* CONVERTIR COORDENADAS A PALABRAS */

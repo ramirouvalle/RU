@@ -27,7 +27,8 @@
             map = new google.maps.Map(document.getElementById('mapa'), mapConfig);
             directionsDisplay = new google.maps.DirectionsRenderer();
             directionsService = new google.maps.DirectionsService();
-
+            //ubicacion
+            /*
             if (navigator.geolocation) {
 		    navigator.geolocation.getCurrentPosition(function(position) {
 			    lat = position.coords.latitude;
@@ -45,14 +46,15 @@
 		    // Browser doesn't support Geolocation
 		    handleLocationError(false, infoWindow, map.getCenter());
 		  }
+		  */
     	}
 
     	function verRuta(cont){
     		var contenedor = document.getElementsByClassName("elementos");
             var titulo = contenedor[cont].getElementsByTagName("h1");
             var p = contenedor[cont].getElementsByTagName("p");
-            var ubicacion = p[0].innerHTML;
-            var destino = p[1].innerHTML;
+            var ubicacion = p[1].innerHTML;
+            var destino = p[2].innerHTML;
             var x = 0;
             var y = 0;
             if(destino == "Ciudad universitaria"){
@@ -87,10 +89,11 @@
 		    document.getElementById("desc_ruta").style.display = "block";
 		    /*PASAR INFO AL DIV */
 		    document.getElementById("titulo").innerHTML = titulo[0].innerHTML;
+		    document.getElementById("usuario").innerHTML = "Anfitrion: "+p[0].innerHTML;
 		    document.getElementById("Origen").innerHTML = "Origen: " + ubicacion;
 		    document.getElementById("Destino").innerHTML = "Destino: "+ destino;
-    		document.getElementById("horarioDes").innerHTML = p[2].innerHTML;
-    		document.getElementById("diasDes").innerHTML = p[3].innerHTML;
+    		document.getElementById("horarioDes").innerHTML = "Hora de salida: "+p[3].innerHTML;
+    		document.getElementById("diasDes").innerHTML = p[4].innerHTML;
     	}
     	function back(){
     		document.getElementById("buscar_ride").style.display = "block";
@@ -126,7 +129,6 @@
 				?>
 			</div>
 			<div id="desc_ruta">	
-				<a href="#" onclick="back();">Volver</a>			
 				<h1 id="titulo"></h1>
 				<p id="usuario"></p>
 				<p id="Origen"></p>
@@ -134,10 +136,24 @@
 				<h2>Dias y Horarios</h2>
 				<p id="diasDes"></p>
 				<p id="horarioDes"></p>
-				
+				<ul>
+					<li><a href="#" onclick="back();">Volver</a></li>
+					<li><a href="#" onclick="document.getElementById('ventana').style.display = 'block';">Solicitar</a></li>
+				</ul>
 			</div>
 		</div>
 		<div id="mapa">
+		</div>
+		<div id="ventana">
+			<div id="cont_ventana">
+				<a href="#" onclick="document.getElementById('ventana').style.display = 'none';" style="float:right">Cerrar</a>
+				<h1>Solicitud de ride</h1>
+				<h2>Nombre del ride</h2>
+				<p>Parrafo de la ventana</p>
+				<textarea rows="5" cols="50">
+				</textarea>
+				<input type="submit" value="Enviar solicitud">
+			</div>
 		</div>
 	</div>
 </body>

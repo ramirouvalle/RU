@@ -48,7 +48,7 @@
 			}
 			include("conexion.php");
 			$user = $_SESSION['usuario'];
-            if (isset($user)) {
+            if (!isset($user)) {
                 $user = 'ax';
             }
             
