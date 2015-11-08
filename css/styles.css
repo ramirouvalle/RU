@@ -134,6 +134,19 @@ header{
 	height: 92%;
 	overflow: scroll;
 }
+#buscador{
+	padding: 10px;
+	width: 100%;
+	background-color: #ecf0f1;
+	font-family: ubuntu-M;
+}
+#buscador select{
+	width: 70%;
+}
+#buscador input{
+	width: 20%;
+	height: 5.5%;
+}
 #elem{
 	margin-bottom: 5px;
 	padding: 10px;
@@ -175,10 +188,11 @@ header{
 }
 #desc_ruta p{
 	color: #aaa;
-	margin-bottom: 8px;
+	margin-bottom: 5px;
 }
 #desc_ruta ul{
-	width: 100%;¿
+	margin-top: 20px;
+	width: 100%;
 }
 #desc_ruta li{
 	margin-left: 3px;

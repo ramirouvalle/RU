@@ -16,7 +16,7 @@
       var lng;
       var infowindow = new google.maps.InfoWindow();
 	  var marker;
-
+	  
       function initMap() {
           directionsDisplay = new google.maps.DirectionsRenderer();
           //COORDENADAS DE LA UNIVERSIDAD
@@ -30,25 +30,8 @@
           map = new google.maps.Map(document.getElementById('mapa'), mapConfig);
           directionsDisplay = new google.maps.DirectionsRenderer();
           directionsService = new google.maps.DirectionsService();
-          //UBICACION
-          if (navigator.geolocation) {
-		    navigator.geolocation.getCurrentPosition(function(position) {
-			    lat = position.coords.latitude;
-    			lng = position.coords.longitude;
-    			var coords = new google.maps.LatLng(lat, lng);
-			    var options = { position: new google.maps.LatLng(lat, lng) }
-			    var marker = new google.maps.Marker(options);
-    			marker.setMap(map);
-			    map.setCenter(coords);
-			    map.setZoom(15);
-		    }, function() {
-		      	handleLocationError(true, infoWindow, map.getCenter());
-		    });
-		  } else {
-		    // Browser doesn't support Geolocation
-		    handleLocationError(false, infoWindow, map.getCenter());
-		  }
-      }
+          	
+      	}
     	function miUbicacion(){
 			geocoder = new google.maps.Geocoder();
 			var latlng = new google.maps.LatLng(lat, lng);
@@ -119,8 +102,8 @@
     				alert(pos);
         		}
     		});
-    	}
-    	*/
+    	}*/
+
       </script>
  
 </head>

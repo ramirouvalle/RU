@@ -5,6 +5,7 @@
 	<title>Buscar ride</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<link href="css/styles.css" rel="stylesheet" type="text/css">
+	<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 	<script async defer
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAVTXAAvDwe8OaeC3xg2KVqgKYWhn7zv_E&callback=initMap">
     </script>
@@ -30,23 +31,23 @@
             //ubicacion
             /*
             if (navigator.geolocation) {
-		    navigator.geolocation.getCurrentPosition(function(position) {
-			    lat = position.coords.latitude;
-    			lng = position.coords.longitude;
-    			var coords = new google.maps.LatLng(lat, lng);
-			    var options = { position: new google.maps.LatLng(lat, lng) }
-			    var marker = new google.maps.Marker(options);
-    			marker.setMap(map);
-			    map.setCenter(coords);
-			    map.setZoom(15);
-		    }, function() {
-		      	handleLocationError(true, infoWindow, map.getCenter());
-		    });
-		  } else {
-		    // Browser doesn't support Geolocation
-		    handleLocationError(false, infoWindow, map.getCenter());
-		  }
-		  */
+			    navigator.geolocation.getCurrentPosition(function(position) {
+				    lat = position.coords.latitude;
+	    			lng = position.coords.longitude;
+	    			var coords = new google.maps.LatLng(lat, lng);
+				    var options = { position: new google.maps.LatLng(lat, lng) }
+				    var marker = new google.maps.Marker(options);
+	    			marker.setMap(map);
+				    map.setCenter(coords);
+				    map.setZoom(15);
+		    	},  function() {
+		      		handleLocationError(true, infoWindow, map.getCenter());
+		    	});
+			} else {
+			    // Browser doesn't support Geolocation
+				handleLocationError(false, infoWindow, map.getCenter());
+			}
+		    */ 
     	}
 
     	function verRuta(cont){
@@ -95,11 +96,38 @@
     		document.getElementById("horarioDes").innerHTML = "Hora de salida: "+p[3].innerHTML;
     		document.getElementById("diasDes").innerHTML = p[4].innerHTML;
     	}
+
     	function back(){
     		document.getElementById("buscar_ride").style.display = "block";
     		document.getElementById("desc_ruta").style.display = "none";
     	}
+    	/*
+    	function solicitar(){
+    		var c = confirm("¿Desea pedir este ride?");
+    		if(c == true){
+    			
+    			
+    			/*var solicitud = {
+    				anfitrion = document.getElementById("usuario").innerHTML;,
+    				solicitante = "<?php @session_start(); echo @$_SESSION['usuario'];?>",
+    			    rutaname = document.getElementById("titulo").innerHTML
+    			}*//*
+    		}else{
 
+    		}
+    	}*/
+    	/*
+    	$("#btn_solicitar").click(function(){
+    		var anfitrion = document.getElementById("usuario").innerHTML;
+	    	var solicitante = "<?php @session_start(); echo @$_SESSION['usuario'];?>";
+	   		var rutaname = document.getElementById("titulo").innerHTML;
+	    	$.post("guarda_solicitud.php",
+	    	{ 
+	    		anfitrion: anfitrion,
+	    		solicitante: solicitante,
+	    		rutaname: rutaname
+	    	})
+	    });*/
     </script>
 </head>
 <body>
@@ -124,6 +152,17 @@
 				</ul>
 			</div>
 			<div id="buscar_ride">
+				<div id="buscador">
+					<form>
+						Destino:<br>
+						<select id="cbxDestino" name="destino">
+						  	<option>Ciudad universitaria</option>
+						  	<option>Mederos</option>
+						  	<option>Hospital</option>
+					    </select>
+					    <input type="submit" value="Aceptar">
+					</form>	
+				</div>
 				<?php
 					include("verRutas.php");
 				?>
@@ -138,7 +177,7 @@
 				<p id="horarioDes"></p>
 				<ul>
 					<li><a href="#" onclick="back();">Volver</a></li>
-					<li><a href="#" onclick="document.getElementById('ventana').style.display = 'block';">Solicitar</a></li>
+					<li><a id="btn_solicitar" href="#">Solicitar</a></li>
 				</ul>
 			</div>
 		</div>
