@@ -10,6 +10,6 @@
 	$pw = "root";
 	$db = "rides";
 
-	$conexion = mysql_connect($host, $user, $pw) or die("Problemas al conectar");
+	@$conexion = mysql_connect($host, $user, $pw) or die("Problemas al conectar");
 	mysql_select_db($db, $conexion) or die("problema al conectar la bd");		
 ?>

@@ -74,7 +74,7 @@
 	        	valor = ubicacion;
 	        }
 	        var seleccionado = document.getElementById("cbxDestino").selectedIndex;
-	        alert(seleccionado);
+	        //alert(seleccionado);
 	        if(valor != ""){
 	        	var destLAT = 0;
 	            var destLNG = 0;
