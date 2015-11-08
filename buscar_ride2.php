@@ -15,6 +15,7 @@
     <script>
         function initMap() {
             var location = new google.maps.LatLng(25.715084, -100.353784);
+            var uanl = new google.maps.LatLng(25.7238862, -100.31285739999998);
             
             var map = new google.maps.Map(document.getElementById('map'), {
                 center: location,
@@ -34,13 +35,13 @@
                 });
                 
                 location = new google.maps.LatLng(25.715084, -100.353784);
-                uanl = new google.maps.LatLng(25.726406, -100.31190379999998);
-                
+                uanl = new google.maps.LatLng(25.7238862, -100.31285739999998);
+
                 /*** Muestro la ruta de mi ubicación hacia la uni ***/
                 var directionsService = new google.maps.DirectionsService();
                 var request = {
-                    destination: location,
-                    origin: uanl,
+                    origin: location,
+                    destination: uanl,
                     travelMode: google.maps.TravelMode.DRIVING
                 };
                 directionsService.route(request, function(response, status) {
