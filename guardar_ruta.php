@@ -1,10 +1,26 @@
 <?php
+
+    function retJSON($ubicacion) {
+        $ubicacion = utf8_encode($ubicacion);
+        $ubicacion = urlencode($ubicacion);
+        $url = "http://maps.google.com/maps/api/geocode/json?sensor=false&address=";
+        $json = file_get_contents($url.$ubicacion);
+        $obj = json_decode($json);
+        $json_return = json_encode($obj->{'results'}[0]->{'geometry'}->{'location'});
+        return $json_return;
+    }
+
 	$destino = $_POST['destino'];
 	$ubicacion = $_POST['ubicacion'];
 	$titulo = $_POST['titulo'];
 	$descripcion = $_POST['descripcion'];
 	$horario = $_POST['horario'];
-	@$arrDias = $_POST['dias'];
+	$arrDias = $_POST['dias'];
+    $coorOrigx = retJSON($ubicacion);
+    $coorOrigy = retJSON($ubicacion);
+
+    $coorOrigx = json_decode($coorOrigx)->{'lat'};
+    $coorOrigy = json_decode($coorOrigy)->{'lng'};
 
 	$coorDestx;
 	$coorDesty;
@@ -33,7 +49,11 @@
 			}
 			include("conexion.php");
 			$user = $_SESSION['usuario'];
-			mysql_query("INSERT INTO rutas (nom_ruta, anfitrion, destino_x, destino_y, ubicacion, dias, horario) VALUES ('$titulo', '$user', '$coorDestx', '$coorDesty', '$ubicacion', '$diasBD', '$horario')", $conexion) or die("Problema en la consultax: ".mysql_error());
+            if (isset($user)) {
+                $user = 'ax';
+            }
+            
+			mysql_query("INSERT INTO rutas (nom_ruta, anfitrion, origen_x, origen_y, destino_x, destino_y, dias, horario) VALUES ('$titulo', '$user', '$coorOrigx', '$coorOrigy', '$coorDestx', '$coorDesty', '$diasBD', '$horario')", $conexion) or die("Problema en la consultax: ".mysql_error());
 			mysql_close($conexion);
 			?>
 			<script type="text/javascript">alert("La ruta se guardo correctamente.")</script>
