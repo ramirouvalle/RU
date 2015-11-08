@@ -1,6 +1,8 @@
 <html>
+<meta charset="UTF-8">
 <head>
 	<title>RideUniversitario</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<link href="css/styles.css" rel="stylesheet" type="text/css">
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script async defer
@@ -62,6 +64,7 @@
 			    }
 		    });
 		}
+
     	
     	function prevRuta(ubicacion){
     		var valor;
@@ -71,6 +74,7 @@
 	        	valor = ubicacion;
 	        }
 	        var seleccionado = document.getElementById("cbxDestino").selectedIndex;
+	        alert(seleccionado);
 	        if(valor != ""){
 	        	var destLAT = 0;
 	            var destLNG = 0;
@@ -104,14 +108,17 @@
 	            alert("Se necesita una ubicacion");
 	        }
     	}
+    	/* PASAR DIRECCION A COORDENADAS */
     	/*
-    	function click_darRide(){
-    		document.getElementById("dar_ride").style.display = "block";
-    		document.getElementById("buscar_ride").style.display = "none";
-    	}
-    	function click_buscarRide(){
-    		document.getElementById("dar_ride").style.display = "none";
-    		document.getElementById("buscar_ride").style.display = "block";
+    	function dirACoords(){
+    		var geocoder = new google.maps.Geocoder();
+    		var dir = document.getElementById("ubi").value;
+    		geocoder.geocode({ 'address': dir}, function(results, status){
+    			if (status == 'OK') {
+    				var pos = results[0].geometry.location;
+    				alert(pos);
+        		}
+    		});
     	}
     	*/
       </script>
@@ -123,6 +130,11 @@
 			<p>RideUniversitario</p>
 		</div>
 		<div id="ops_users">
+			<?php 
+                @session_start();
+        	    echo @$_SESSION['usuario'];
+            ?>
+            <a href="logout.php">Cerrar sesión</a>
 		</div>
 	</header>
 	<div id="contenedor">
@@ -145,7 +157,7 @@
 					  	<option>Mederos</option>
 					  	<option>Hospital</option>
 					  </select>
-					  <a href="#" onclick="var v = document.getElementById('ubi').value; prevRuta(v);">Visualizar Ruta</a>
+					  <a href="#" onclick="var v = document.getElementById('ubi').value; prevRuta(v); dirACoords();">Visualizar Ruta</a>
                       <input type="text" name="titulo" placeholder="Nombre de la ruta">
                       <input type="text" name="descripcion" placeholder="Descripcion">
                       <input type="text" name="horario" placeholder="Horario de salida">
