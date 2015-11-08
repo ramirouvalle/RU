@@ -13,9 +13,6 @@
       var directionsDisplay;
       var directionsService = new google.maps.DirectionsService();
       var map;
-      var coor_x = 0;
-      var coor_y = 0;
-
       function initMap() {
           directionsDisplay = new google.maps.DirectionsRenderer();
           //COORDENADAS DE LA UNIVERSIDAD
@@ -65,15 +62,17 @@
 
       function prevRuta(ubicacion){
         initMap();
+        
         var valor
         if(ubicacion == ""){
           valor = document.getElementById("ubi").value;
         }else{
           valor = ubicacion;
         }
+        
         if(valor != ""){
          document.getElementById("map").style.display = "block";
-          initMap();
+          //initMap();
             var request = {
                 origin: valor,
                 //destination: document.getElementById("fin").value,
@@ -99,6 +98,7 @@
                 }
                 
             });
+
         }else{
             alert("Se necesita una ubicacion");
         }
@@ -186,6 +186,10 @@
                 </div>
             </div>
             <div id="pnl_buscar_rutas">
+                  <form>
+                      <input type="text" placeholder="Buscar">
+                      <input type="submit" value="Buscar">
+                  </form>
                     <?php
                         require("verRutas.php");
                     ?>
@@ -223,6 +227,7 @@
                       <input type="text" id="ubi" name="ubicacion" placeholder="Ubicacion">
                       <a href="#" onclick="var v = document.getElementById('ubi').value; prevRuta(v);">Visualizar Ruta</a>
                       <input type="text" name="titulo" placeholder="Nombre de la ruta">
+                      <input type="text" name="descripcion" placeholder="Descripcion">
                       <input type="text" name="horario" placeholder="Horario de salida">
                       <h2>Dias que realiza la ruta</h2>
                       <table>

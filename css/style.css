@@ -48,6 +48,11 @@ header{
 	height: 100%;
 	text-align: right;
 	float:right;
+	color: white;
+}
+#ops_user a{
+	color: yellow;
+	text-decoration: none;
 }
 /*  TERMINA HEADER  */
 
@@ -225,7 +230,7 @@ section{
 	padding-top: 5px;
 	width: 100%;
 }
-#opciones input[type=submit], #creacion input[type=submit]{
+#opciones input[type=submit], #creacion input[type=submit], #pnl_buscar_rutas input[type=submit]{
 	margin-top: 10px;
 	padding: 5px;
 	background-color: rgb(181,230,29);
@@ -268,4 +273,9 @@ section{
 }
 #creacion input[type=checkbox]{
 	margin: 10px 3px 0 0;
+}
+#pnl_buscar_rutas input[type=text]{
+	margin: 5px;
+	padding: 5px;
+	width: 70%;
 }
