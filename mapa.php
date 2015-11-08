@@ -80,7 +80,7 @@
 	            var destLNG = 0;
 		        if(seleccionado == 0){
 		          	destLAT = 25.7238862;
-		          	destLNG = -100.31285739999998;
+		          	destLNG = -100.31285739;
 		        }else if(seleccionado == 1){
 		          	destLAT = 25.61415077;
 		          	destLNG = -100.28184056;

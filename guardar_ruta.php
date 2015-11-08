@@ -30,7 +30,7 @@
 		$verificacion = strlen($titulo) * strlen($ubicacion) * strlen($horario) * strlen($ndias) * strlen($descripcion);
 		if($verificacion > 0){
 			session_start();
-			if($destino == "Universidad"){
+			if($destino == "Ciudad universitaria"){
 				$coorDestx = "25.7238862";
 				$coorDesty = "-100.31285739999998";
 			}else if($destino == "Mederos"){
@@ -55,9 +55,7 @@
             
 			mysql_query("INSERT INTO rutas (nom_ruta, anfitrion, origen_x, origen_y, destino_x, destino_y, dias, horario) VALUES ('$titulo', '$user', '$coorOrigx', '$coorOrigy', '$coorDestx', '$coorDesty', '$diasBD', '$horario')", $conexion) or die("Problema en la consultax: ".mysql_error());
 			mysql_close($conexion);
-			?>
-			<script type="text/javascript">alert("La ruta se guardo correctamente.")</script>
-			<?php
+			
 			header("Location: mapa.php");
 		}else{
 			echo "Complete el formulario.";
