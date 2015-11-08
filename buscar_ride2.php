@@ -13,7 +13,6 @@
     <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script>
-        
         function initMap() {
             var location = new google.maps.LatLng(25.715084, -100.353784);
             
@@ -22,7 +21,7 @@
                 zoom: 14
             });
             
-            $.getJSON('map.php', function(data) {
+            $.getJSON('rutas.php', function(data) {
                 var routes = [];
                 $.each(data, function(index, route) {
                     routes.push(
