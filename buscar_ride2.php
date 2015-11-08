@@ -21,7 +21,7 @@
                 zoom: 14
             });
             
-            $.getJSON('rutas.php', function(data) {
+            $.getJSON('rutasdata.php', function(data) {
                 var routes = [];
                 $.each(data, function(index, route) {
                     routes.push(
