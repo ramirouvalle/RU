@@ -1,7 +1,7 @@
 <?php
 	$host = "127.0.0.1";
 	$user = "root";
-	$pw = "root";
+	$pw = "";
 	$db = "rides";
 
 	@$conexion = mysql_connect($host, $user, $pw) or die("Problemas al conectar");
