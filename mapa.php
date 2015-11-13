@@ -31,6 +31,40 @@
           directionsDisplay = new google.maps.DirectionsRenderer();
           directionsService = new google.maps.DirectionsService();
           	
+          //ubicacion
+            
+            if (navigator.geolocation) {
+			    navigator.geolocation.getCurrentPosition(function(position) {
+				    lat = position.coords.latitude;
+	    			lng = position.coords.longitude;
+	    			var coords = new google.maps.LatLng(lat, lng);
+				    var options = { position: new google.maps.LatLng(lat, lng) }
+				    var marker = new google.maps.Marker(options);
+	    			marker.setMap(map);
+				    map.setCenter(coords);
+				    map.setZoom(15);
+		    	},  
+		    	function(objPositionError){
+					switch (objPositionError.code){
+						case objPositionError.PERMISSION_DENIED:
+								alert("No se ha permitido el acceso a la posición del usuario.");
+							break;
+							case objPositionError.POSITION_UNAVAILABLE:
+								alert("No se ha podido acceder a la información de su posición.");
+							break;
+							case objPositionError.TIMEOUT:
+								alert("El servicio ha tardado demasiado tiempo en responder.");
+							break;
+							default:
+								alert("Error desconocido.");
+					}
+				});
+			} else {
+			    // Browser doesn't support Geolocation
+				//handleLocationError(false, infoWindow, map.getCenter());
+				alert("El navegador no soporta la geolocalizacion");
+			}
+		    
       	}
     	function miUbicacion(){
 			geocoder = new google.maps.Geocoder();
