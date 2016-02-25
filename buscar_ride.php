@@ -10,30 +10,37 @@
     <script>
         window.geoloc;
         window.googlemap;
-        
+        var directionsDisplay = new google.maps.DirectionsRenderer();
+
         function geoLocation() {
             if (navigator.geolocation) {
                     navigator.geolocation.getCurrentPosition(function(position) {
                         
                         /*** Inicializo mi ubicación ***/
-                        var lat = position.coords.latitude;
-                        var lng = position.coords.longitude;
+                        var lat =  25.6668463 //position.coords.latitude;
+                        var lng = -100.182999 //position.coords.longitude;
                         var location = new google.maps.LatLng(lat, lng);
                         //location = new google.maps.LatLng(25.713423, -100.352685);
                         window.geoloc = location;
-                        var uanl = new google.maps.LatLng(25.726406, -100.3119038);
+                        var uanl = new google.maps.LatLng(lat, lng);
                         
                         var map = new google.maps.Map(document.getElementById('mapa'), {
                             center: {lat: lat, lng: lng},
                             scrollwheel: false,
                             zoom: 13
                         });
-                        
+                    //poner marcador
+                        var options = { position: new google.maps.LatLng(lat, lng) }
+                        var marker = new google.maps.Marker(options);
+                        marker.setMap(map);
+                    ////
                         window.googlemap = map;
 
+                    /*PRIMERA_RUTA
                         var directionsDisplay = new google.maps.DirectionsRenderer({
                             map: map
                         });
+                    */
 
                         // Set destination, origin and travel mode.
                         var request = {
@@ -49,8 +56,8 @@
                               directionsDisplay.setDirections(response);
                             }
                         })
-                        initMap(map, location, uanl)
-                        
+                        initMap(location);
+                        console.log(location.lat() +" "+location.lng());
                     }, function() {
                         handleLocationError(true, infoWindow, map.getCenter());
                     });
@@ -61,7 +68,25 @@
             }
         }
         
-        function initMap(map, location, uanl) {
+        function initMap(location) {
+            console.log(location.lat() +" "+location.lng());
+            /* destinoElegido = document.getElementById("cbxDestino").selectedIndex;
+            var destLAT = 0 , destLNG = 0;
+            if (destinoElegido == 0) {
+                
+            }else if(destinoElegido == 1){
+                destLAT = 25.7238862;
+                destLNG = -100.31285739;
+            }else if(destinoElegido == 2){
+                destLAT = 25.61415077;
+                destLNG = -100.28184056;
+            }else if(destinoElegido == 3){
+                destLAT = 25.69185015;
+                destLNG = -100.34884214;
+            }           
+            console.log("de: "+destinoElegido);
+            console.log(destLAT +" "+destLNG);
+            */
             /*** Consigue las rutas que hay en la base de datos ***/
             $.getJSON('rutasdata.php', function(data) {
                 var routes = [];
@@ -81,6 +106,7 @@
                 });
                 
                 var c = 0;
+                console.log(c);
                 /*** Muestro rutas cerca de mi ***/
                 routes.forEach(function(route, index) {
                     var request = {
@@ -119,13 +145,15 @@
                             google.maps.LatLng(25.61415077, -100.28184056),
                             google.maps.LatLng(25.726406, -100.3119038)
                         ];
-                        /*** Si la ruta esta cerca a mi ubicación ***/
-                        if (google.maps.geometry.poly.isLocationOnEdge(location, route.polyline, 10e-3)
-                            /*&& (destinations.indexOf(route.destino) > -1)*/) {
-                            //console.log(index);
+                        
+                        /*** Si la ruta esta cerca a mi ubicación & si esta para mi mismo destino ***/
+                        
+                        if (google.maps.geometry.poly.isLocationOnEdge(location, route.polyline, 10e-3)) {
+                            //console.log(c);
                             //console.log(route.nombre);
                             
-                            verOpcion(route, index);
+                            verOpcion(route, c);
+                            c++;
                         }
                     });
                 });
@@ -152,7 +180,7 @@
             	y = -100.34884214;
             }
             
-            console.log(index);
+            //console.log(index);
             $.getJSON('pedirRuta.php?id='+id, function(data) {
                 var dataRoute = data[0];
                 var route = {
@@ -228,7 +256,7 @@
                          "</p>" + "<p>" + destinonombre + "</p>" +
                          "<p>" + route.horario + "</p>" +
                          "<p>" + route.dias + "</p>" +
-                         "</div>");
+                         "</div1>");
         }
     </script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJywoknUVkMygQ_OvEzJWhmQq_SMFG4No&callback=geoLocation&region=MX&libraries=geometry,places">
@@ -260,11 +288,13 @@
                     <form>
                         Destino:<br>
                         <select id="cbxDestino" name="destino">
+                            <option>Seleccionar</option>
                             <option>Ciudad universitaria</option>
                             <option>Mederos</option>
                             <option>Hospital</option>
                         </select>
-                        <input type="submit" value="Aceptar">
+                        <!--<input type="button"  onclick="filtro();" value="Aceptar">-->
+                        <a href="#" onclick="initMap(window.geoloc);">Buscar</a>
                     </form> 
                 </div>
 			</div>
