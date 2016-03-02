@@ -1,0 +1,101 @@
+*,body{
+	margin:0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body{
+	background-color: #34495E;
+}
+@font-face {
+    font-family: oswald;
+    src: url(../fonts/Oswald-Light.ttf);
+}
+@font-face {
+    font-family: ubuntu-m;
+    src: url(../fonts/Ubuntu-M.ttf);
+}
+@font-face {
+    font-family: ubuntu;
+    src: url(../fonts/Ubuntu-L.ttf);
+}
+@font-face {
+    font-family: opensans-l;
+    src: url(../fonts/OpenSans-Light.ttf);
+}
+/*  CABEZERA  */
+header{
+	width: 100%;
+	height: 7%;
+	background-color: #f1c40f;
+}
+#logo{
+	margin-left: 2.5%;
+	padding: 5px;
+	height: 100%;
+	float: left;
+	font-family: ubuntu-m;
+	font-size: 2em;
+	color: white;
+}
+#ops_users{
+	margin-right: 20px;
+	padding: 10px;
+	height: 100%;
+	float: right;
+	color: #2c3e50;
+	font-family: oswald;
+	font-size: 1.15em;
+}
+/*  FIN CABEZERA  */
+#todo{
+	width: 100%;
+	height: 93%;
+	}
+.menu{
+	margin: 0 auto;
+	width: 85%;
+	height: 7%;
+	background-color: #2980b9;
+	color: white;
+	font-family: ubuntu;
+	border-top: 1px #2c3e50 solid;
+	border-left: 1px #2c3e50 solid;
+	border-right: 1px #2c3e50 solid;
+}
+.menu ul{
+	height: 100%;
+	list-style: none;
+}
+.menu li{
+	padding-top: 1%;
+	width: 10%;
+	height: 100%;
+	float: left;
+	text-align: center;
+}
+#central{
+	margin: 0 auto;
+	padding: 2%;
+	width: 85%;
+	height: 93%;
+	background-color: #ecf0f1;
+	border:1px #2c3e50 solid;
+}
+
+.bloque-1, .bloque-2{
+	width: 48%;
+	height: 30%;
+	background-color: #bdc3c7;
+}
+.bloque-1, .bloque-3{
+	float:left;
+}
+.bloque-2{
+	float: right;
+}
+.bloque-3{
+	margin-top: 3%;
+	width: 100%;
+	height: 62%;
+	background-color: #bdc3c7;
+}
