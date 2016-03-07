@@ -17,8 +17,8 @@
                     navigator.geolocation.getCurrentPosition(function(position) {
                         
                         /*** Inicializo mi ubicación ***/
-                        var lat =  25.6668463 //position.coords.latitude;
-                        var lng = -100.182999 //position.coords.longitude;
+                        var lat = position.coords.latitude;
+                        var lng = position.coords.longitude;
                         var location = new google.maps.LatLng(lat, lng);
                         //location = new google.maps.LatLng(25.713423, -100.352685);
                         window.geoloc = location;
@@ -279,7 +279,7 @@
 		<div id="sidebar">
 			<div id="menu_sidebar">
 				<ul>
-					<li><a href="mapa.php">Dar Ride</a></li>
+					<li><a href="crear_ruta.php">Dar Ride</a></li>
 					<li><a href="#">Buscar ride</a></li>
 				</ul>
 			</div>

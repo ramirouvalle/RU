@@ -12,7 +12,7 @@
 		session_start();
 		$_SESSION['usuario'] = $reg['user'];
 		$_SESSION['autentico'] = "SI";
-		header("Location: mapa.php");
+		header("Location: principal.php");
 	}else{
 		echo "Usuario o contraseña incorrecta";
 	}

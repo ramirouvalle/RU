@@ -10,7 +10,7 @@
 		include("conexion.php");
 		mysql_query("INSERT INTO usuarios (user, pass, matricula, correo) VALUES ('$usuario', '$pass', '$matricula', '$mail')", $conexion) or die("Problema en la consultax: ".mysql_error());
 		mysql_close($conexion);
-		header("Location: index.html#first");
+		header("Location: index.html#second");
 	}else{
 		echo "Complete todo el formulario";
 	}

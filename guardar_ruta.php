@@ -55,7 +55,7 @@
 			mysql_query("INSERT INTO rutas (nom_ruta, anfitrion, origen_x, origen_y, destino_x, destino_y, ubicacion, dias, horario) VALUES ('$titulo', '$user', '$coorOrigx', '$coorOrigy', '$coorDestx', '$coorDesty', '$ubicacion', '$diasBD', '$horario')", $conexion) or die("Problema en la consultax: ".mysql_error());
 			mysql_close($conexion);
 			
-			header("Location: mapa.php");
+			header("Location: crear_ruta.php");
 		}else{
 			echo "Complete el formulario.";
 		}
