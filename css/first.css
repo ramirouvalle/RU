@@ -1,7 +1,11 @@
-*, html{
+*, body{
 	margin: 0;
 	padding: 0;
 	box-sizing:border-box;
+}
+body{
+	font-size: 16px;
+	background-color: #FFEE58;
 }
 @font-face {
     font-family: oswald;
@@ -19,8 +23,9 @@
     font-family: ubuntu-m;
     src: url(../fonts/Ubuntu-M.ttf);
 }
-body{
-	background-color: #FFEE58;
+@font-face {
+    font-family: opensans-l;
+    src: url(../fonts/OpenSans-Light.ttf);
 }
 nav{
 	width: 100%;
@@ -45,6 +50,7 @@ nav{
 	float: right;
 	font-family: oswald;
 	margin-right: 5%;
+	font-size: 1.1em;	
 }
 #menu li{
 	padding: 17px;

@@ -1,12 +1,20 @@
+<?php
+    session_start();
+    if(isset($_SESSION['usuario'])){
+        header("Location: principal.php");
+        exit();
+    }
+?>
 <html>
   <head>
+    <title>Ride Universitario</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <link href="css/first.css" rel="stylesheet" type="text/css">
   </head> 
   <body>
     <nav>
         <div id="logo">
-            <p><a href="index.html">RideUniversitario</a></p>
+            <p><a href="index.php">RideUniversitario</a></p>
         </div>
         <ul id="menu">
           <li><a href="#second">Iniciar sesión</a></li>

@@ -1,10 +1,10 @@
-<?include "seguridad.php";?>
+<?php include 'seguridad.php';?>
 <html>
 <meta charset="UTF-8">
 <head>
     <title>Buscar ride</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
     <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script>
@@ -256,33 +256,19 @@
                          "</p>" + "<p>" + destinonombre + "</p>" +
                          "<p>" + route.horario + "</p>" +
                          "<p>" + route.dias + "</p>" +
-                         "</div1>");
+                         "</div>");
         }
     </script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJywoknUVkMygQ_OvEzJWhmQq_SMFG4No&callback=geoLocation&region=MX&libraries=geometry,places">
     </script>
 </head>
 <body>
-	<header>
-		<div id="logo">
-			<p>RideUniversitario</p>
-		</div>
-		<div id="ops_users">
-			<?php 
-                @session_start();
-        	    echo @$_SESSION['usuario'];
-            ?>
-          <a href="logout.php">Cerrar sesión</a>
-		</div>
-	</header>
-	<div id="contenedor">
-		<div id="sidebar">
-			<div id="menu_sidebar">
-				<ul>
-					<li><a href="crear_ruta.php">Dar Ride</a></li>
-					<li><a href="#">Buscar ride</a></li>
-				</ul>
-			</div>
+    <!-- HEADER -->
+    <?php include 'snippets/header.html';?>
+    <div id="contenedor">
+        <!-- MENU -->
+        <?php include 'snippets/menu.html';?>
+        <div id="sidebar">
 			<div id="buscar_ride">
                 <div id="buscador">
                     <form>

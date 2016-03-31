@@ -1,10 +1,10 @@
-<?include "seguridad.php";?>
+<?php include 'seguridad.php';?>
 <html>
 <meta charset="UTF-8">
 <head>
 	<title>RideUniversitario</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<link href="css/styles.css" rel="stylesheet" type="text/css">
+	<link href="css/style.css" rel="stylesheet" type="text/css">
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script async defer
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAVTXAAvDwe8OaeC3xg2KVqgKYWhn7zv_E&callback=initMap">
@@ -143,26 +143,12 @@
  
 </head>
 <body>
-	<header>
-		<div id="logo">
-			<p>RideUniversitario</p>
-		</div>
-		<div id="ops_users">
-			<?php 
-                @session_start();
-        	    echo @$_SESSION['usuario'];
-            ?>
-            <a href="logout.php">Cerrar sesión</a>
-		</div>
-	</header>
+	<!-- HEADER -->
+	<?php include 'snippets/header.html';?>
 	<div id="contenedor">
+		<!-- MENU -->
+		<?php include 'snippets/menu.html';?>
 		<div id="sidebar">
-			<div id="menu_sidebar">
-				<ul>
-					<li><a href="#">Dar Ride</a></li>
-					<li><a href="buscar_ride.php" >Buscar ride</a></li>
-				</ul>
-			</div>
 			<div id="dar_ride">
 				<h1>Crear nueva ruta</h1>
 				<form method="POST" action="guardar_ruta.php">
@@ -195,8 +181,6 @@
                       </table>
                       <input type="submit" name="btnCrearRuta" value="Guardar">    
                   </form>
-			</div>
-			<div id="buscar_ride">
 			</div>
 		</div>
 		<div id="mapa">
