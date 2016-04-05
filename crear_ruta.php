@@ -98,13 +98,13 @@
 	            var destLNG = 0;
 		        if(seleccionado == 0){
 		          	destLAT = 25.7238862;
-		          	destLNG = -100.31285739;
+		          	destLNG = -100.31285739999998;
 		        }else if(seleccionado == 1){
 		          	destLAT = 25.61415077;
-		          	destLNG = -100.28184056;
+		          	destLNG = -100.28184055999998;
 		        }else if(seleccionado == 2){
 		          	destLAT = 25.69185015;
-		          	destLNG = -100.34884214;
+		          	destLNG = -100.34884213999999;
 		        }
 		        var request = {
 		            origin: valor,

@@ -201,6 +201,13 @@ header{
 	width: 20%;
 	height: 5.5%;
 }
+#buscador a{
+	padding: 5px;
+	color: white;
+	background-color: #27ae60;
+	text-decoration: none;
+	border-radius: 3px;
+}
 #elem{
 	margin-bottom: 5px;
 	padding: 10px;

@@ -34,10 +34,10 @@
 				$coorDesty = "-100.31285739999998";
 			}else if($destino == "Mederos"){
 				$coorDestx = "25.61415077";
-				$coorDesty = "-100.28184056";
+				$coorDesty = "-100.28184055999998";
 			}else if($destino == "Hospital"){
 				$coorDestx = "25.69185015";
-				$coorDesty = "-100.34884214";
+				$coorDesty = "-100.34884213999999";
 			}
 			for($n = 0 ; $n<$ndias ; $n++){
 				if($n == 0){
