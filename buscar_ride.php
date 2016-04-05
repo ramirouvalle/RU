@@ -208,15 +208,9 @@
                 }
                 var marker = new google.maps.Marker(options);
                 marker.setMap(map);
-                /*
-                var map = new google.maps.Map(document.getElementById('mapa'), {
-                    center: {lat: route.origen.lat(), lng: route.origen.lng()},
-                    scrollwheel: false,
-                    zoom: 13
-                });*/
 
                 var directionsDisplay = new google.maps.DirectionsRenderer({
-                    map: map,//window.googlemap,
+                    map: map,
                     polylineOptions: {
                         strokeColor: "red"
                     }

@@ -119,6 +119,13 @@ header{
 	height: 62%;
 	background-color: #bdc3c7;
 }
+.title{
+	padding: 3px 5px;
+	height: 2em;
+	background-color: #34495e;
+	color: white;
+	font-family: ubuntu;
+}
 /********************************************************/
 /*************** CREAR RUTA Y BUSCAR RUTA ***************/
 #sidebar{

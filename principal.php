@@ -11,9 +11,19 @@
 		<!-- MENU -->
 		<?php include 'snippets/menu.html';?>
 		<div id="central">
-			<div class="bloque-1"></div>
-			<div class="bloque-2"></div>
-			<div class="bloque-3"></div>
+			<div class="bloque-1">
+				<div class="title">
+					<h2>Ultimos rides</h2>
+				</div>
+			</div>
+			<div class="bloque-2">
+				<div class="title">
+				</div>
+			</div>
+			<div class="bloque-3">
+				<div class="title">
+				</div>
+			</div>
 		</div>
 	</section>
 </body>
