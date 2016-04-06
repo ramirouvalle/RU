@@ -1,0 +1,20 @@
+/*** PENDIENTES Y/O ERRORES ***\
+
+1. (BUSCAR_RIDE) Cuando se selecciona un destino y se buscan las rutas se muestran las rutas 
+disponibles, pero al volver a mostrar las rutas del mismo u otro destino no se borran las que
+ya se habian mostrado. /* TERMINADO *\
+  
+2. (CREAR_RIDE) Poder seleccionar una ubicacion simplemente tocando un punto en el mapa.
+
+3. (CREAR_RIDE) Cambiar el campo de la hora para que se estandarice a 24hrs o AM y PM.
+
+4. (BUSCAR_RIDE) Si no hay rutas mostrar algun mensaje en vez de la lista de rutas.
+
+5. (BUSCAR_RIDE) Cambiar el diseño de como se muestran las rutas cercanas en forma de cards views. 
+/* CASI TERMINADO *\
+
+6. (BUSCAR_RIDE) Al momento de seleccionar una ruta que esta se muestre en el mapa y aparte que 
+se muestre un marcador con mi ubicacion. /* TERMINADO *\
+
+7. (PRINCIPAL) Mostrar las ultimas rutas agregadas. /* PROCESO *\
+

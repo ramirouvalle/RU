@@ -97,15 +97,16 @@ header{
 /********************************************************/
 /*************** PRINCIPAL ******************************/
 #central{
-	padding: 2em 2.5em;
+	padding: 1.5em 2.5em;
 	height: 93%;
 	background-color: #ecf0f1;
 }
 
 .bloque-1, .bloque-2{
 	width: 48%;
-	height: 30%;
+	height: 35%;
 	background-color: #bdc3c7;
+	border-radius: 5px;
 }
 .bloque-1, .bloque-3{
 	float:left;
@@ -114,17 +115,39 @@ header{
 	float: right;
 }
 .bloque-3{
-	margin-top: 2.5em;
+	margin-top: 1.5em;
 	width: 100%;
 	height: 62%;
 	background-color: #bdc3c7;
+	border-radius: 5px;
 }
 .title{
-	padding: 3px 5px;
+	padding: 3px 5px 3px 8px;
 	height: 2em;
 	background-color: #34495e;
 	color: white;
 	font-family: ubuntu;
+}
+.show_rides{
+	height: 82%;
+	overflow-y: scroll;
+	font-family: ubuntu;
+}
+.show_rides ul{
+	margin-left: 1.5em;
+	list-style-type: circle;
+}
+.show_rides li{
+	margin-top: .5em;
+	width: 100%;
+}
+.show_rides a{
+	color: #34495e;
+	text-decoration: none;
+}
+.show_rides a:hover{
+	color:red;
+	background-color: red;
 }
 /********************************************************/
 /*************** CREAR RUTA Y BUSCAR RUTA ***************/
@@ -193,21 +216,20 @@ header{
 #buscar_ride{
 	width: 100%;
 	height: 100%;
-	overflow: scroll;
+	overflow-y: scroll;
 }
 #buscador{
-	padding: 10px;
-	width: 100%;
-	background-color: #ecf0f1;
+	margin: 0 .7em .7em .7em;
+	padding: 1em;
+	background-color: white;
 	font-family: ubuntu-M;
+	border-bottom-right-radius: 3px;
+	border-bottom-left-radius: 3px;
 }
 #buscador select{
-	width: 70%;
+	width: 55%;
 }
-#buscador input{
-	width: 20%;
-	height: 5.5%;
-}
+
 #buscador a{
 	padding: 5px;
 	color: white;
@@ -216,14 +238,15 @@ header{
 	border-radius: 3px;
 }
 #elem{
-	margin-bottom: 5px;
+	margin: .7em;
 	padding: 10px;
 	font-family: opensans-l;
-	border-bottom: 1px white solid;
+	background-color: white;
+	border-radius: 3px;
 }
 #elem h1{
 	font-size: 1em;
-	color: white;
+	color: #34495e;
 }
 #elem p{
 	color: #aaa;

@@ -267,7 +267,7 @@
 			<div id="buscar_ride">
                 <div id="buscador">
                     <form>
-                        Destino:<br>
+                        Destino:
                         <select id="cbxDestino" name="destino">
                             <option value="Seleccionar">Seleccionar</option>
                             <option value="Ciudad universitaria">Ciudad universitaria</option>

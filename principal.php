@@ -15,6 +15,9 @@
 				<div class="title">
 					<h2>Ultimos rides</h2>
 				</div>
+				<div class="show_rides">
+					<?php include 'new_rides.php';?>
+				</div>
 			</div>
 			<div class="bloque-2">
 				<div class="title">
