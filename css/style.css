@@ -135,21 +135,39 @@ header{
 	overflow-y: scroll;
 	font-family: ubuntu;
 }
-.show_rides ul{
-	margin-left: 1.5em;
-	list-style-type: circle;
+.ride{
+	margin: .5em .5em 0 .5em;
+	padding: .5em;
+	width: 97.5%;
+	background-color: #CCC;
+	border-radius: 2px;
 }
-.show_rides li{
-	margin-top: .5em;
-	width: 100%;
-}
-.show_rides a{
+.ride a{
 	color: #c0392b;/*#34495e;*/
 	text-decoration: none;
 }
-.show_rides a:hover{
+.ride a:hover{
 	color:red;
-	background-color: red;
+}
+.ride h4{
+	display: inline;
+}
+.destino{
+	padding: 2px;
+	border-radius: 2px;
+	float: right;
+}
+.universidad{
+	background-color: #FFEB3B;
+	color: #34495e;
+}
+.mederos{
+	background-color: #e74c3c;
+	color: white;
+}
+.hospital{
+	background-color: #1abc9c;
+	color: #34495e;
 }
 /********************************************************/
 /*************** CREAR RUTA ***************/
@@ -269,7 +287,7 @@ header{
 #desc_ruta{
 	padding: 15px;
 	width: 100%;
-	height: 92%;
+	height: 100%;
 	display: none;
 	color: white;
 	font-family: opensans-l;
