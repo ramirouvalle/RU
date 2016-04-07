@@ -28,7 +28,7 @@
               center: uanl
           }
           //MAPA
-          map = new google.maps.Map(document.getElementById('mapa'), mapConfig);
+          map = new google.maps.Map(document.getElementById('mapa_a'), mapConfig);
           directionsDisplay = new google.maps.DirectionsRenderer();
           directionsService = new google.maps.DirectionsService();
           	
@@ -148,12 +148,12 @@
 	<div id="contenedor">
 		<!-- MENU -->
 		<?php include 'snippets/menu.html';?>
-		<div id="sidebar">
+		<div id="sidebar_a">
 			<div id="dar_ride">
 				<h1>Crear nueva ruta</h1>
 				<form method="POST" action="guardar_ruta.php">
 					  Origen:
-					  <a href="#" onclick="miUbicacion();" style="float: right">Mi ubicacion</a>
+					  <a href="#" onclick="miUbicacion();" style="float: right">Usar mi ubicacion</a>
                       <input type="text" id="ubi" name="ubicacion" placeholder="Ubicacion">
                       Destino:
 					  <select id="cbxDestino" name="destino">
@@ -164,7 +164,7 @@
 					  <a href="#" onclick="var v = document.getElementById('ubi').value; prevRuta(v); dirACoords();">Visualizar Ruta</a>
                       <input type="text" name="titulo" placeholder="Nombre de la ruta">
                       <input type="text" name="descripcion" placeholder="Descripcion">
-                      <input type="text" name="horario" placeholder="Horario de salida">
+                      <input type="time" name="horario" placeholder="Horario de salida">
                       <h2>Dias que realiza la ruta</h2>
                       <table>
                           <tr>
@@ -183,7 +183,7 @@
                   </form>
 			</div>
 		</div>
-		<div id="mapa">
+		<div id="mapa_a">
 		</div>
 	</div>
 </body>

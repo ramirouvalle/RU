@@ -19,7 +19,7 @@
 
         function crearMapa(location, option){
             /*** Creamos el mapa ***/
-            var map = new google.maps.Map(document.getElementById('mapa'), {
+            var map = new google.maps.Map(document.getElementById('mapa_b'), {
                 center: location,
                 scrollwheel: false,
                 zoom: 14
@@ -153,7 +153,7 @@
             }else if (route.destino.lat() == destinations.hospital[0] && route.destino.lng() == destinations.hospital[1]) {
                 var destinonombre = "Hospital";
             }
-            $("#buscar_ride").append("<div id='elem' class='elementos'>" +
+            $("#buscar_ride").append("<div id='elem' class='elementos box'>" +
                          "<a href='#' onclick='verRuta(" + route.id + ", " + index + ");' >" +
                          "<h1>" + route.nombre + "</h1>" +
                          "</a>" + 
@@ -263,9 +263,9 @@
     <div id="contenedor">
         <!-- MENU -->
         <?php include 'snippets/menu.html';?>
-        <div id="sidebar">
+        <div id="sidebar_b">
 			<div id="buscar_ride">
-                <div id="buscador">
+                <div id="buscador" class="box">
                     <form>
                         Destino:
                         <select id="cbxDestino" name="destino">
@@ -292,7 +292,7 @@
 				</ul>
 			</div>
 		</div>
-		<div id="mapa">
+		<div id="mapa_b">
 		</div>
         <div id="ventana">
 			<div id="cont_ventana">
