@@ -17,7 +17,8 @@
       var lng;
       var infowindow = new google.maps.InfoWindow();
 	  var marker;
-	  
+	  var infowindow = null; 
+
       function initMap() {
           directionsDisplay = new google.maps.DirectionsRenderer();
           //COORDENADAS DE LA UNIVERSIDAD
@@ -31,7 +32,8 @@
           map = new google.maps.Map(document.getElementById('mapa_a'), mapConfig);
           directionsDisplay = new google.maps.DirectionsRenderer();
           directionsService = new google.maps.DirectionsService();
-          	
+          infoWindow = new google.maps.InfoWindow();
+
           //ubicacion
             
             if (navigator.geolocation) {
@@ -39,11 +41,16 @@
 				    lat = position.coords.latitude;
 	    			lng = position.coords.longitude;
 	    			var coords = new google.maps.LatLng(lat, lng);
-				    var options = { position: new google.maps.LatLng(lat, lng) }
+				    var options = { position: new google.maps.LatLng(lat, lng), draggable: true};
 				    var marker = new google.maps.Marker(options);
 	    			marker.setMap(map);
 				    map.setCenter(coords);
 				    map.setZoom(15);
+				    openInfoWindow(marker, map);
+
+				    google.maps.event.addListener(marker, 'click', function(){
+					    openInfoWindow(marker);
+					});
 		    	},  
 		    	function(objPositionError){
 					switch (objPositionError.code){
@@ -126,6 +133,14 @@
 	            alert("Se necesita una ubicacion");
 	        }
     	}
+    	function openInfoWindow(marker, map) {
+		    var markerLatLng = marker.getPosition();
+		    var infoWindow = new google.maps.InfoWindow();
+		    infoWindow.setContent([
+		        'Mueveme a tu ubicacion'
+		    ].join(''));
+		    infoWindow.open(map, marker);
+		}
     	/* PASAR DIRECCION A COORDENADAS */
     	/*
     	function dirACoords(){
@@ -140,7 +155,6 @@
     	}*/
 
       </script>
- 
 </head>
 <body>
 	<!-- HEADER -->
