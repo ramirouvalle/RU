@@ -115,6 +115,13 @@ header{
 .bloque-2{
 	float: right;
 }
+#calificaciones{
+	height: 82%;
+	padding: .5em;
+	color: #d35400;
+	font-family: opensans-l;
+	overflow-y: scroll;
+}
 .bloque-3{
 	margin-top: 1.5em;
 	width: 100%;
@@ -138,7 +145,7 @@ header{
 	margin: .5em .5em 0 .5em;
 	padding: .5em;
 	width: 97.5%;
-	background-color: #CCC;
+	background-color: #eeeded;
 	border-radius: 2px;
 }
 .ride a{
@@ -402,10 +409,54 @@ header{
 	text-align: center;
 }
 .b-perfil a:hover{
-
+	background-color: #f39c12;
 }
 .b-cont{
 	width: 72%;
 	height: 100%;
 	float: right;
+}
+.b-cont h3{
+	margin-bottom: .2em;
+	font-family: opensans-l;
+}
+.b-int{
+	padding: .6em;
+	font-family: opensans-l;
+}
+.b-reputacion{
+	width: 28%;
+	height: 48.9%;
+	float: right;
+	text-align: center;
+}
+.b-reputacion img{
+	margin-top: .7em;
+	margin-bottom: .7em;
+	width: 50%;
+}
+.b-calificaciones{
+	width: 70%;
+	height: 48.9%;
+	float: left;
+}
+.b-rides{
+	margin-top: .8em;
+	width: 100%;
+	height: 48.9%;
+	float: left;
+}
+.a-calificacion{
+	margin-bottom: .3em;
+	padding: .3em;
+	background-color: #eeeded;
+}
+.cal-pos{
+	background-color: rgba(46,204,113,.5);
+}
+.cal-neg{
+	background-color: rgba(231,76,60,.5);
+}
+.cal-neu{
+	background-color: rgba(241,196,15,.4);
 }

@@ -21,7 +21,22 @@
 			</div>
 			<div class="bloques bloque-2">
 				<div class="title">
+					<h2>Ultimos comentarios</h2>
 				</div>
+				<article id="calificaciones">
+					<article class="a-calificacion">
+						<p>Muy puntual y muy buen trato</p>
+					</article>
+					<article class="a-calificacion">
+						<p>Se demoro un poco pero llegamos bien<p>
+					</article>
+					<article class="a-calificacion">
+						<p>Acordamos un punto cercano pero el usuario no vino a recojerme</p>
+					</article>
+					<article class="a-calificacion">
+						<p>Todo muy bien, lo recomiendo</p>
+					</article>
+				</article>
 			</div>
 			<div class="bloques bloque-3">
 				<div class="title">
