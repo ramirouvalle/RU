@@ -4,7 +4,9 @@
 *,body{
 	margin:0;
 	padding: 0;
-	box-sizing: border-box; 
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
 }
 body{
 	font-size: 16px;
@@ -90,6 +92,80 @@ header{
 	width: 100%;
 	height: 93%;
 	background-color: #eeeded;
+}
+#ventana{
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.85);
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: none;
+}
+#cont_ventana{
+	width: 70%;
+	height: 80%;
+	position: fixed;
+	top:10%;
+	left: 15%;
+	border-radius: 5px;
+}
+.nav_ventana{
+	padding: .75em;
+	width: 100%;
+	height: 5%;
+	min-height: 2.5em;
+	background-color: #eeeded;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	border-bottom: 1px #ccc solid;
+}
+.nav_ventana h1{
+	font-family: ubuntu;
+	text-align: left;
+	color: #2c3e50;
+	display: inline-block;
+}
+.nav_ventana a{
+	float: right;
+	text-decoration: none;
+}
+#map_ventana{
+	width: 58%;
+	height: 95%;
+	float:left;
+	background-color: #2c3e50;
+	border-bottom-left-radius: 5px;
+}
+#info_ventana{
+	padding: .5em;
+	width: 42%;
+	height: 95%;
+	float: right;
+	border-left: 1px #ccc solid;
+	overflow-y: auto;
+	background-color: white;
+	border-bottom-right-radius:5px;
+	font-family: opensans-l;
+	color: #2c3e50;
+}
+#info_ventana a{
+	margin: auto;
+	padding: .5em;
+	width: 80%;
+	background-color: #f1c40f;
+	border-radius: 3px;
+	display:block;
+	text-align: center;
+	text-decoration: none;
+	color: #34495e;
+	font-weight: bold;
+}
+.comments{
+	margin-top: 1.5em;
+	width: 100%;
+	height: 50%;
+	border-top: 1px #ccc solid;
 }
 /********************************************************/
 /*************** PRINCIPAL ******************************/
@@ -334,34 +410,7 @@ header{
 #desc_ruta a:hover{
 	color: #d35400;
 }
-#ventana{
-	width: 100%;
-	height: 100%;
-	background-color: rgba(0,0,0,0.85);
-	position: fixed;
-	top: 0;
-	left: 0;
-	display: none;
-}
-#cont_ventana{
-	padding: 20px;
-	width: 50%;
-	height: 60%;
-	background-color: white;
-	position: fixed;
-	top:15%;
-	left: 25%;
-	border-radius: 5px;
-}
-#cont_ventana h1{
-	font-family: ubuntu;
-	text-align: center;
-	color: #2c3e50;
-}
-#cont_ventana textarea{
-	width: 90%;
-	height: 25%;
-}
+
 /********************************************************/
 #b-central{
 	padding: 1.5em 2.5em;
