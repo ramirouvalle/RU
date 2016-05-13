@@ -137,6 +137,7 @@
         			alert("El ride se ha solicitado satisfactoriamente");
         		}
   			});
+  			$("#solicitudes").load("consultar_solicitudes.php");
         }
     </script>
 </head>

@@ -1,5 +1,5 @@
 <?php
-	include "seguridad.php";
+	include 'seguridad.php';
 
 	$solicitante = $_SESSION['usuario'];
 	$anfitrion = $_GET['anfitrion'];

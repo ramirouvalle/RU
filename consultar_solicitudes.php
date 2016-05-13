@@ -1,4 +1,5 @@
 <?php
+	@include "seguridad.php";
 	$anfitrion = $_SESSION['usuario'];
 
 	include "conexion.php";
@@ -9,7 +10,9 @@
 
 	if ($fila = mysql_fetch_assoc($query)) {
 		if($fila["nSolicitudes"] > 0){
-			echo "<span class='notification'>".$fila["nSolicitudes"]."</span>";
+			echo "Solicitudes<span class='notification'>".$fila["nSolicitudes"]."</span>";
+		}else{
+			echo "Solicitudes";
 		}
 	}
 ?>

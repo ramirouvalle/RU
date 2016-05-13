@@ -183,11 +183,11 @@
                 x = destinations.hospital[0];
                 y = destinations.hospital[1];
             }
-            
             $.getJSON('pedirRuta.php?id='+id, function(data) {
                 var dataRoute = data[0];
                 var route = {
-                    id: dataRoute.id_ruta,
+                    id_ruta: dataRoute.id_ruta,
+                    anfitrion: dataRoute.anfitrion,
                     nombre: dataRoute.nom_ruta,
                     ubicacion: dataRoute.ubicacion,
                     origen: new google.maps.LatLng(dataRoute.origen_x, dataRoute.origen_y),
@@ -228,18 +228,39 @@
                         directionsDisplay.setDirections(response);
                     }
                 });
+            
+                document.getElementById("buscar_ride").style.display = "none";
+                document.getElementById("desc_ruta").style.display = "block";
+                /*PASAR INFO AL DIV */
+                document.getElementById("titulo").innerHTML = titulo[0].innerHTML;
+                document.getElementById("usuario").innerHTML = "Anfitrion: "+p[0].innerHTML;
+                document.getElementById("Origen").innerHTML = "Origen: " + ubicacion;
+                document.getElementById("Destino").innerHTML = "Destino: "+ destino;
+                document.getElementById("horarioDes").innerHTML = "Hora de salida: "+p[3].innerHTML;
+                document.getElementById("diasDes").innerHTML = p[4].innerHTML;
+                
+                /* Creamos boton de solicitar */
+                var capa = document.getElementById("btn");
+                var boton = document.getElementById("btn_solicitar");
+                //Verificamos si existe o no el boton solicitar
+                if (boton === undefined || boton === null) {
+                    //No existe 
+                }else{
+                    //Si existe 
+                    //Lo removemos 
+                    boton.parentNode.removeChild(boton);
+                }
+                //Creamos boton de solicitar
+                var enlace = document.createElement("a");
+                enlace.setAttribute('id', 'btn_solicitar');
+                enlace.setAttribute('href',"#");
+                enlace.setAttribute('onclick','pedirRide('+route.id_ruta+',"'+route.anfitrion+'");');
+                enlace.innerHTML = "Solicitar";
+                capa.appendChild(enlace);
             });
-            document.getElementById("buscar_ride").style.display = "none";
-            document.getElementById("desc_ruta").style.display = "block";
-            /*PASAR INFO AL DIV */
-            document.getElementById("titulo").innerHTML = titulo[0].innerHTML;
-            document.getElementById("usuario").innerHTML = "Anfitrion: "+p[0].innerHTML;
-            document.getElementById("Origen").innerHTML = "Origen: " + ubicacion;
-            document.getElementById("Destino").innerHTML = "Destino: "+ destino;
-            document.getElementById("horarioDes").innerHTML = "Hora de salida: "+p[3].innerHTML;
-            document.getElementById("diasDes").innerHTML = p[4].innerHTML;
         }
         function back(){
+            detectarUbicacion();
             document.getElementById("buscar_ride").style.display = "block";
             document.getElementById("desc_ruta").style.display = "none";
         }
@@ -254,6 +275,19 @@
         }
         function cerrarSolicitud(){
             document.getElementById('ventana').style.display ="none";
+        }
+        function pedirRide(id_ruta, anfitrion){
+            $.getJSON('solicitar.php',
+            {
+                anfitrion: anfitrion,
+                id_ruta: id_ruta
+            },
+            function(data) {
+                if(data == true){
+                    alert("El ride se ha solicitado satisfactoriamente");
+                }
+            });
+            $("#solicitudes").load("consultar_solicitudes.php");
         }
     </script>
 </head>
@@ -288,7 +322,7 @@
 				<p id="horarioDes"></p>
 				<ul>
 					<li><a href="#" onclick="back();">Volver</a></li>
-					<li><a id="btn_solicitar" onclick="solicitarRuta();" href="#">Solicitar</a></li>
+					<li id="btn"><!---<a id="btn_solicitar" onclick="solicitarRuta();" href="#">Solicitar</a>--></li>
 				</ul>
 			</div>
 		</div>
